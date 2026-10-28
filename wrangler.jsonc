@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "booker",
+  "main": ".open-next/worker.js",
+  "workers_dev": false,
+  // Cloudflare manages the DNS record and cert for a custom domain route.
+  "routes": [{ "pattern": "book.tapt.so", "custom_domain": true }],
+  "compatibility_date": "2026-10-27",
+  "compatibility_flags": ["nodejs_compat"],
+  // Public config. Secrets go in via `wrangler secret put`.
+  "vars": {
+    "TELEGRAM_CLIENT_ID": "9249238407"
+  },
+  "upload_source_maps": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "booker",
+      "database_id": "fb8e522b-400d-4526-baf2-e41f769d117e",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
