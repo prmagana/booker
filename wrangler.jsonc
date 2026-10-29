@@ -14,6 +14,12 @@
       "database_name": "booker",
       "database_id": "fb8e522b-400d-4526-baf2-e41f769d117e",
       "migrations_dir": "migrations"
+    },
+    // Shared accounts table. Root (prmagana/root) owns the schema and applies its migrations.
+    {
+      "binding": "ACCOUNTS",
+      "database_name": "accounts",
+      "database_id": "b3577be4-f7b8-4bdb-9cec-81e4e4af3841"
     }
   ],
   "assets": {
